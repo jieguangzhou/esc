@@ -46,6 +46,8 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim" -- Speed up loading Lua modules    TODO: figure out how to use this
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "rcarriga/nvim-notify" -- notify
+
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
@@ -55,7 +57,7 @@ return packer.startup(function(use)
 
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  -- use "akinsho/toggleterm.nvim"
+  use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -84,6 +86,17 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "kosayoda/nvim-lightbulb" -- code action
+  use "ray-x/lsp_signature.nvim" -- show function signature when typing
+  use "j-hui/fidget.nvim" -- show lsp progress
+
+  -- 
+  use {
+    "phaazon/hop.nvim", -- like easymotion, but more powerful
+    branch = "v1", -- optional but strongly recommended
+  }
+
+  -- use "nvim-pack/nvim-spectre" -- search and replace pane
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -93,10 +106,19 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    commit = "c81382328ad47c154261d1528d7c921acad5eae5",
+  } -- enhance texetobject selection
+  use "romgrk/nvim-treesitter-context" -- show class/function at the top
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  use "folke/todo-comments.nvim" -- todo comments
+  use "Pocco81/AutoSave.nvim"
+  use "djoshea/vim-autoread"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
