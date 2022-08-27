@@ -181,6 +181,18 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+  R = {
+    name = "Replace",
+    f = { "<cmd>lua require('spectre').open_file_search()<CR>", "Replace File" },
+    p = { "<cmd>lua require('spectre').open()<CR>", "Replace Project" },
+    s = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search" },
+    -- -- 全项目替换
+    -- vim.keybinds.gmap("n", "<leader>rp", "", vim.keybinds.opts)
+    -- -- 只替换当前文件
+    -- vim.keybinds.gmap("n", "<leader>rf", , vim.keybinds.opts)
+    -- -- 全项目中搜索当前单词
+    -- vim.keybinds.gmap("n", "<leader>rw", , vim.keybinds.opts)
+  },
 }
 
 which_key.setup(setup)

@@ -96,7 +96,7 @@ return packer.startup(function(use)
     branch = "v1", -- optional but strongly recommended
   }
 
-  -- use "nvim-pack/nvim-spectre" -- search and replace pane
+  use "nvim-pack/nvim-spectre" -- search and replace pane
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
