@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use {"kyazdani42/nvim-tree.lua", tag = "nightly"}
 
   use {'akinsho/bufferline.nvim', tag = "v2.4.0", requires = 'kyazdani42/nvim-web-devicons'}
 
@@ -60,7 +60,8 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
+  -- use "lukas-reineke/indent-blankline.nvim"
+  use {"lukas-reineke/indent-blankline.nvim", tag = "v3.20.7"}
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
@@ -82,7 +83,8 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
+  -- use "neovim/nvim-lspconfig" -- enable LSP
+  use {"neovim/nvim-lspconfig", tag = "v0.1.6"}
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
@@ -99,19 +101,20 @@ return packer.startup(function(use)
   use "nvim-pack/nvim-spectre" -- search and replace pane
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {"nvim-telescope/telescope.nvim", tag = "0.1.1"}
 
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    tag = "v0.8.5"
   }
   use {
     "nvim-treesitter/nvim-treesitter-textobjects",
     commit = "c81382328ad47c154261d1528d7c921acad5eae5",
   } -- enhance texetobject selection
   use "romgrk/nvim-treesitter-context" -- show class/function at the top
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use {"JoosepAlviste/nvim-ts-context-commentstring", commit = "0f196eb556d50ade8d2f015f1a61648db20042b4"}
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -119,7 +122,7 @@ return packer.startup(function(use)
   use "folke/todo-comments.nvim" -- todo comments
   use "Pocco81/AutoSave.nvim"
   use "djoshea/vim-autoread"
-
+  use "sindrets/diffview.nvim" 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   use 'github/copilot.vim'
